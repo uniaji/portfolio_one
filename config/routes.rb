@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    sessions: 'users/sessions' }
+    sessions: 'users/sessions'
+  }
+
+  devise_scope :user do
+      get "sign_in", :to => "users/sessions#new"
+      get "sign_out", :to => "users/sessions#destroy"
+  end
 
   root 'home#top'
   resources :users
 end
+
+# session = login
+# registration = signup
 
 # Prefix Verb   URI Pattern                                                                              Controller#Action
 # new_user_session GET    /users/sign_in(.:format)                                                                 users/sessions#new

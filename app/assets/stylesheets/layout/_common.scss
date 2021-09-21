@@ -1,0 +1,12 @@
+body {
+	background-color: white;
+
+	@include overTab {
+		background-color: black;
+		color: white;
+	}
+
+	h1 {
+		font-family: "Carattere", cursive;
+	}
+}

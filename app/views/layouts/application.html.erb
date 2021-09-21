@@ -2,14 +2,54 @@
 <html>
   <head>
     <title>PortfolioOne</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
+  <div class="header">
+		<% if user_signed_in? %>
+      <div class="inner">
+        <div class="title">
+          <h1><%= link_to 'Nyanstagram', root_path %></h1>
+        </div>
+        <div class="search"></div>
+        <ul class="menu">
+          <li class="icon">
+            <%= link_to(root_path) do %>
+              <span class="fas fa-home menu-icon"></span>
+            <% end %>
+          </li>
+          <li class="icon">
+            <%= link_to(root_path) do %>
+              <span class="far fa-paper-plane menu-icon"></span>
+            <% end %>
+          </li>
+          <li class="icon">
+            <%= link_to(root_path) do %>
+              <span class="far fa-heart menu-icon"></span>
+            <% end %>
+          </li>
+          <li class="icon">
+            <%= link_to(root_path) do %>
+              <span class="far fa-user menu-icon"></span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+		<% end %>
+  </div>
+
     <%= yield %>
   </body>
 </html>

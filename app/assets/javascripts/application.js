@@ -1,16 +1,22 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
-// vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
-//= require_tree .
+$(function () {
+	//global nav
+	var btn = $(".mod_dropnavi ul li.parent");
+	var submenu = $(".mod_dropnavi_child");
+	var submenulink = $(".mod_dropnavi_child ul li a");
+	//click
+	$(btn).bind("click", "focus", function (event) {
+		var shownav = $(this).find(".mod_dropnavi_child");
+		if ($(shownav).css("display") == "none") {
+			$(shownav).slideDown("fast");
+		} else {
+			$(shownav).slideUp("fast");
+		}
+	});
+	//hover
+	$(btn).hover(
+		function () {},
+		function () {
+			$(submenu).slideUp("fast");
+		}
+	);
+});

@@ -1,0 +1,139 @@
+.posts-index {
+	.inner {
+		width: 614px;
+		margin: 0 auto;
+		border: 1px solid lightgray;
+
+		.header {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-bottom: 1px solid lightgray;
+
+			.auther {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 16px;
+
+				.icon {
+					width: 32px;
+					height: 32px;
+				}
+
+				.name {
+					font-size: 14px;
+					font-weight: 800px;
+				}
+			}
+			.menu {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-left: auto;
+				padding: 12px;
+				@include overTab {
+					// display: none;
+				}
+
+				li {
+					padding-right: 30px;
+					@include overTab {
+						padding-right: 15px;
+					}
+				}
+				#post-menu-btn-check {
+					display: none;
+				}
+				#post-menu-btn-check:checked ~ .posts-menu-list {
+					display: block;
+				}
+
+				.posts-menu-list {
+					display: none;
+					font-size: 14px;
+					width: 25%;
+					height: 27%;
+					background-color: white;
+					border-radius: 20px;
+					box-shadow: 0 0 8px lightgray;
+					transition: all 0s;
+					text-align: center;
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+
+					li {
+						display: inline-block;
+						border-bottom: 1px solid lightgray;
+						margin: 10px 0;
+
+						:hover {
+							opacity: 0.5;
+						}
+						@include overTab {
+							// border: none;
+						}
+					}
+
+					ul,
+					li,
+					a {
+						display: block;
+						width: 100%;
+						box-sizing: border-box;
+						text-decoration: none;
+						padding: 3px 0;
+						z-index: 70;
+
+						@include overTab {
+							color: white;
+							padding: 5px 20px 0 0;
+							box-sizing: content-box;
+							width: auto;
+						}
+						#delete {
+							color: red;
+						}
+					}
+					.cancel {
+						border: none;
+					}
+					span {
+						padding: 0 10px;
+					}
+				}
+			}
+		}
+		.img {
+		}
+
+		.footer {
+			margin: 0;
+			.items {
+				.footer-items {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+			.likes {
+				width: 20px;
+			}
+			.comments {
+				width: 20px;
+			}
+			#name {
+				font-size: 14px;
+				font-weight: 400px;
+			}
+
+			.comment-input {
+				border-top: 1px solid lightgray;
+
+				width: 20px;
+			}
+		}
+	}
+}

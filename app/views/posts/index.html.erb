@@ -1,0 +1,72 @@
+
+<div class="posts-index">
+    <div class="inner">
+        <div class="container roop">
+            <% @posts.each do |post| %>
+
+            <div class="header">
+                <div class="auther">
+                    <div class="icon user-icon">
+                        <span class="far fa-user menu-icon"></span>
+                    </div>
+                    <div class="name">
+                        <%= link_to post.user.username, user_path(current_user) %>
+                    </div>
+                </div>
+                <div class="menu">
+                    <input type="checkbox" id="post-menu-btn-check" />
+					<label for="post-menu-btn-check" onclicl="" class="post-menu-btn">
+                        <span class="menu-icon">…</span>
+                    </label>
+                    <ul class="posts-menu-list">
+                        <li><%= link_to "削除", posts_path, id: "delete" %></li>
+                        <li><%= link_to "投稿へ移動", posts_path %></li>
+                        <li>シェア先…</li>
+                        <li>リンクをコピー</li>
+                        <li>埋め込み</li>
+                        <li class="cancel">キャンセル</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="img">
+                <%= image_tag post.img.url if post.img? %>
+            </div>
+
+            <div class="footer"></div>
+                <div class="items">
+                    <ul class="footer-items">
+                        <li>
+                            <%= link_to(root_path) do %>
+                                <span class="far fa-heart footer-icon"></span>
+                            <% end %>
+                        </li>
+                        <li>
+                            <%= link_to(root_path) do %>
+                                <span class="far fa-comment footer-icon"></span>
+                            <% end %>
+                        </li>
+                        <li>
+                            <%= link_to(root_path) do %>
+                                <span class="far fa-paper-plane footer-icon"></span>
+                            <% end %>
+                        </li>
+                        <li>
+                            <%= link_to(root_path) do %>
+                                <span class="far fa-bookmark pull-icon"></span>
+                            <% end %>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="likes">b</div>
+                <div class="comments">
+                    <%= link_to post.user.username, user_path(post.id), id: "name" %>
+                    <%= link_to post.content, post_path(post.id) %>
+                </div>
+                <div class="date">d</div>
+                <div class="comment-input">e</div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>

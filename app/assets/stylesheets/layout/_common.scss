@@ -1,9 +1,14 @@
 body {
-	background-color: white;
+	// background-color: lightblue;
 
 	@include overTab {
 		background-color: black;
 		color: white;
+	}
+
+	.inner {
+		width: 1000px;
+		margin: 0 auto;
 	}
 
 	h1 {
@@ -11,8 +16,7 @@ body {
 	}
 
 	.flash {
-		// background-color: lightgrey;
+		background-color: lightgrey;
 		text-align: center;
-		padding: 5px 0;
 	}
 }

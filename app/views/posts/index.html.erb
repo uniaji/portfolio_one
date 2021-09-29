@@ -1,9 +1,8 @@
 
 <div class="posts-index">
     <div class="inner">
+        <% @posts.each do |post| %>
         <div class="container roop">
-            <% @posts.each do |post| %>
-
             <div class="header">
                 <div class="auther">
                     <div class="icon user-icon">
@@ -19,8 +18,8 @@
                         <span class="menu-icon">…</span>
                     </label>
                     <ul class="posts-menu-list">
-                        <li><%= link_to "削除", posts_path, id: "delete" %></li>
-                        <li><%= link_to "投稿へ移動", posts_path %></li>
+                        <li><%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} %></li>
+                        <li><%= link_to "投稿へ移動", post_path(post) %></li>
                         <li>シェア先…</li>
                         <li>リンクをコピー</li>
                         <li>埋め込み</li>
@@ -32,7 +31,7 @@
                 <%= image_tag post.img.url if post.img? %>
             </div>
 
-            <div class="footer"></div>
+            <div class="footer">
                 <div class="items">
                     <ul class="footer-items">
                         <li>
@@ -52,21 +51,26 @@
                         </li>
                         <li>
                             <%= link_to(root_path) do %>
-                                <span class="far fa-bookmark pull-icon"></span>
+                                <span class="far fa-bookmark footer-icon"></span>
                             <% end %>
                         </li>
                     </ul>
                 </div>
 
-                <div class="likes">b</div>
+                <div class="likes">いいね！</div>
                 <div class="comments">
                     <%= link_to post.user.username, user_path(post.id), id: "name" %>
                     <%= link_to post.content, post_path(post.id) %>
                 </div>
-                <div class="date">d</div>
-                <div class="comment-input">e</div>
+                <div class="date"><%= time_ago_in_words(post.created_at)+"前" %></div>
+                <div class="comment-input">
+                    <span class="far fa-smile footer-icon"></span>
+                            <div class="comment-form">コメントを投稿する, placeholder: "150文字以内"
+                            </div>
+                </div>
             </div>
-            <% end %>
         </div>
+        <div class="blanc"></div>
+        <% end %>
     </div>
 </div>

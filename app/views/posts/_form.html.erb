@@ -1,15 +1,15 @@
 <div class="posts-form">
     <%= form_with model: @post, local: true do |f| %>
-        <label class="img">写真</label>
-        <div class="content cmn-textarea">
+        <label class="cmn sub-title">写真</label>
+        <div class="cmn content cmn-textarea">
             <%= f.file_field :img, class: "image" %>
-            <%= f.submit %>
+
         </div>
-        <label class="title">内容</label>
-        <div class="content cmn-textarea">
-            <%= f.text_area :content, class: "form-control", size: "60x10" %>
+        <label class="cmn sub-title">内容</label>
+        <div class="cmn content cmn-textarea">
+            <%= f.text_area :content, class: "form-control", size: "60x6", placeholder: "150文字以内" %>
         </div>
-        <div class="btn btn-posts">
+        <div class="cmn btn btn-posts">
             <%= f.submit "投稿する", class: "btn" %>
         </div>
     <% end %>

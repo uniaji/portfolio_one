@@ -11,7 +11,12 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :users
   resources :posts
+
+  delete '/posts/:id/destroy' => 'posts#destroy'
+
 end
+
+# 僕はうにと申します。３歳で、お父さんはアメリカンショートヘアー、お母さんがマンチカンです。同じお父さんのあじちゃんとは生まれた時からずっと一緒。あじちゃんはとっても優しくて、大好きです。よく一緒にお外見たり、一緒に寝たりしています。
 
 # session = login
 # registration = signup

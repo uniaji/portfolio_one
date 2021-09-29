@@ -1,6 +1,6 @@
 .posts-index {
-	.inner {
-		width: 614px;
+	.container {
+		width: 600px;
 		margin: 0 auto;
 		border: 1px solid lightgray;
 
@@ -114,26 +114,70 @@
 			.items {
 				.footer-items {
 					display: flex;
-					justify-content: center;
-					align-items: center;
+					margin: 4px 0 0;
+					padding: 0 16px;
+					li:nth-child(4) {
+						margin-left: auto;
+					}
 				}
 			}
 			.likes {
-				width: 20px;
+				font-size: 14px;
+				font-weight: bold;
+				margin: 0 0 8px;
+				padding: 0 16px;
 			}
 			.comments {
-				width: 20px;
+				font-size: 14px;
+				padding: 0 16px;
 			}
 			#name {
-				font-size: 14px;
-				font-weight: 400px;
+				font-weight: bold;
 			}
-
+			.date {
+				font-size: 10px;
+				color: #8e8e8e;
+				margin: 0 0 4px;
+				padding: 0 16px;
+			}
 			.comment-input {
+				margin: 4px 0 0;
+				padding: 0 16px;
 				border-top: 1px solid lightgray;
-
-				width: 20px;
 			}
 		}
+	}
+	.blanc {
+		height: 24px;
+	}
+	.footer-icon {
+		font-size: 24px;
+		padding: 8px;
+	}
+}
+
+.posts-new {
+	.inner {
+		width: 600px;
+		margin: 0 auto;
+
+		.cmn-title {
+			margin: 10px 0;
+			padding: 0 16px;
+			border: 1px solid lightgray;
+		}
+	}
+}
+
+.posts-form {
+	border: 1px solid lightgray;
+
+	.cmn {
+		margin: 0 0 10px;
+		padding: 0 16px 5px 16px;
+	}
+	.sub-title {
+		font-size: 20px;
+		border: none;
 	}
 }

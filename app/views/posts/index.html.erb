@@ -1,4 +1,3 @@
-
 <div class="posts-index">
     <div class="inner">
         <% @posts.each do |post| %>
@@ -18,7 +17,7 @@
                         <span class="menu-icon">…</span>
                     </label>
                     <ul class="posts-menu-list">
-                        <li><%= link_to "削除", post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} %></li>
+                        <li><%= link_to("削除", post_path(post), { method: :delete, data: {confirm: "ログアウトしますか？"}, id: "delete"}) %></li>
                         <li><%= link_to "投稿へ移動", post_path(post) %></li>
                         <li>シェア先…</li>
                         <li>リンクをコピー</li>
@@ -32,30 +31,7 @@
             </div>
 
             <div class="footer">
-                <div class="items">
-                    <ul class="footer-items">
-                        <li>
-                            <%= link_to(root_path) do %>
-                                <span class="far fa-heart footer-icon"></span>
-                            <% end %>
-                        </li>
-                        <li>
-                            <%= link_to(root_path) do %>
-                                <span class="far fa-comment footer-icon"></span>
-                            <% end %>
-                        </li>
-                        <li>
-                            <%= link_to(root_path) do %>
-                                <span class="far fa-paper-plane footer-icon"></span>
-                            <% end %>
-                        </li>
-                        <li>
-                            <%= link_to(root_path) do %>
-                                <span class="far fa-bookmark footer-icon"></span>
-                            <% end %>
-                        </li>
-                    </ul>
-                </div>
+                <%= render 'items' %>
 
                 <div class="likes">いいね！</div>
                 <div class="comments">

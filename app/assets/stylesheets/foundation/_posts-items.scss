@@ -1,0 +1,14 @@
+.items {
+	.footer-items {
+		display: flex;
+		margin: 4px 0 0;
+		padding: 0 16px;
+		li:nth-child(4) {
+			margin-left: auto;
+		}
+	}
+	.footer-icon {
+		font-size: 24px;
+		padding: 8px;
+	}
+}

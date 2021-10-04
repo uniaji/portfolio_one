@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
+        @post.user_id = current_user.id
         if @post.save
             redirect_to posts_path, notice: '新しく投稿しました！'
         else
@@ -23,10 +24,13 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.all.order(created_at: :desc)
+        @like = Like.new
+
     end
 
     def show
         @post = Post.find(params[:id])
+        @like = Like.new
         # @comments = @post.comments
         # @comment = Comment.new
     end

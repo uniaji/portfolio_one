@@ -12,13 +12,14 @@
                     </div>
                 </div>
                 <div class="menu">
+                <%= "投稿No#{post.id}" %>
                     <input type="checkbox" id="post-menu-btn-check" />
-					<label for="post-menu-btn-check" onclicl="" class="post-menu-btn">
+					<label for="post-menu-btn-check" onclick="" class="post-menu-btn">
                         <span class="menu-icon">…</span>
                     </label>
                     <ul class="posts-menu-list">
-                        <li><%= link_to("削除", post_path(post.id), { method: :delete, data: {confirm: "投稿を削除しますか？"}, id: "delete"}) %></li>
-                        <li><%= link_to "投稿へ移動", post_path(post.id) %></li>
+                        <li><%= link_to("削除#{post.id}", post_path(post), { method: :delete, data: {confirm: "投稿を削除しますか？"}, id: "delete"}) %></li>
+                        <li><%= link_to "投稿へ移動#{post.id}", post_path(post) %></li>
                         <li>シェア先…</li>
                         <li>リンクをコピー</li>
                         <li>埋め込み</li>

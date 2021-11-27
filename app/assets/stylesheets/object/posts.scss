@@ -1,0 +1,305 @@
+.footer-icon {
+	display: flex;
+}
+
+.posts-index {
+	.container {
+		width: 600px;
+		margin: 0 auto;
+		border: 1px solid lightgray;
+
+		.header {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-bottom: 1px solid lightgray;
+
+			.auther {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 16px;
+
+				.icon {
+					width: 32px;
+					height: 32px;
+				}
+
+				.name {
+					font-size: 14px;
+					font-weight: 800px;
+				}
+			}
+			.menu {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-left: auto;
+				padding: 12px;
+				@include overTab {
+					// display: none;
+				}
+
+				li {
+					padding-right: 30px;
+					@include overTab {
+						padding-right: 15px;
+					}
+				}
+				#post-menu-btn-check {
+					display: none;
+				}
+				#post-menu-btn-check:checked ~ .posts-menu-list {
+					display: block;
+				}
+
+				.posts-menu-list {
+					display: none;
+					font-size: 14px;
+					width: 25%;
+					height: 27%;
+					background-color: white;
+					border-radius: 20px;
+					box-shadow: 0 0 8px lightgray;
+					transition: all 0s;
+					text-align: center;
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+
+					li {
+						display: inline-block;
+						border-bottom: 1px solid lightgray;
+						margin: 10px 0;
+
+						:hover {
+							opacity: 0.5;
+						}
+						@include overTab {
+							// border: none;
+						}
+					}
+
+					ul,
+					li,
+					a {
+						display: block;
+						width: 100%;
+						box-sizing: border-box;
+						text-decoration: none;
+						padding: 3px 0;
+						z-index: 70;
+
+						@include overTab {
+							color: white;
+							padding: 5px 20px 0 0;
+							box-sizing: content-box;
+							width: auto;
+						}
+						#delete {
+							color: red;
+						}
+					}
+					.cancel {
+						border: none;
+					}
+					span {
+						padding: 0 10px;
+					}
+				}
+			}
+		}
+		.img {
+		}
+
+		.footer {
+			margin: 0;
+			.likes {
+				font-size: 14px;
+				font-weight: bold;
+				margin: 0 0 8px;
+				padding: 0 16px;
+			}
+			.comments {
+				font-size: 14px;
+				padding: 0 16px;
+			}
+			#name {
+				font-weight: bold;
+			}
+			.date {
+				font-size: 10px;
+				color: #8e8e8e;
+				margin: 0 0 4px;
+				padding: 0 16px;
+			}
+			.comment-input {
+				margin: 4px 0 0;
+				padding: 0 16px;
+				border-top: 1px solid lightgray;
+			}
+		}
+	}
+	.blanc {
+		height: 24px;
+	}
+}
+
+.posts-new {
+	.inner {
+		width: 600px;
+		margin: 0 auto;
+
+		.cmn-title {
+			margin: 10px 0;
+			padding: 0 16px;
+			border: 1px solid lightgray;
+		}
+	}
+}
+
+.posts-show {
+	.inner {
+		display: flex;
+		justify-content: center;
+		// align-items: center;
+
+		.show-left {
+			width: 60%;
+			height: 600px;
+		}
+		.show-right {
+			border: 1px solid lightgray;
+			flex: 1;
+
+			.auther {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 10px 16px;
+				border-bottom: 1px solid lightgray;
+				.icon {
+					font-size: 32px;
+				}
+
+				.name {
+					font-size: 14px;
+					font-weight: bold;
+					padding-left: 20px;
+				}
+				.menu {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-left: auto;
+					padding: 12px;
+					@include overTab {
+						// display: none;
+					}
+
+					li {
+						padding-right: 30px;
+						@include overTab {
+							padding-right: 15px;
+						}
+					}
+					#post-menu-btn-check {
+						display: none;
+					}
+					#post-menu-btn-check:checked ~ .posts-menu-list {
+						display: block;
+					}
+
+					.posts-menu-list {
+						display: none;
+						font-size: 14px;
+						width: 25%;
+						height: 22%;
+						background-color: white;
+						border-radius: 20px;
+						box-shadow: 0 0 8px lightgray;
+						transition: all 0s;
+						text-align: center;
+						position: fixed;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+
+						li {
+							display: inline-block;
+							border-bottom: 1px solid lightgray;
+							margin: 10px 0;
+
+							:hover {
+								opacity: 0.5;
+							}
+							@include overTab {
+								// border: none;
+							}
+						}
+
+						ul,
+						li,
+						a {
+							display: block;
+							width: 100%;
+							box-sizing: border-box;
+							text-decoration: none;
+							padding: 3px 0;
+							z-index: 70;
+
+							@include overTab {
+								color: white;
+								padding: 5px 20px 0 0;
+								box-sizing: content-box;
+								width: auto;
+							}
+							#delete {
+								color: red;
+							}
+						}
+						.cancel {
+							border: none;
+						}
+						span {
+							padding: 0 10px;
+						}
+					}
+				}
+			}
+			.contents {
+				height: 350px;
+				display: flex;
+				padding: 12px 16px 16px;
+				.menu-icon {
+					font-size: 32px;
+					padding: 0 18px 0 0;
+				}
+				#name {
+					font-weight: bold;
+				}
+				.name-content {
+					font-size: 14px;
+					.date {
+						color: #8e8e8e;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.posts-form {
+	border: 1px solid lightgray;
+
+	.cmn {
+		margin: 0 0 10px;
+		padding: 0 16px 5px 16px;
+	}
+	.sub-title {
+		font-size: 20px;
+		border: none;
+	}
+}

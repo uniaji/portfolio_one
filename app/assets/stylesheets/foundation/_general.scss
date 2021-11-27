@@ -1,0 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	line-height: 1.5;
+	font-family: "Hiragino Mincho Pro", serif;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	@include overTab {
+		color: white;
+	}
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+ul {
+	list-style: none;
+}
+
+.sign-link {
+	color: #6495ed;
+}
+
+.unlike-btn {
+	color: #e54747;
+}

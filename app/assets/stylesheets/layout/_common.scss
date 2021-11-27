@@ -1,0 +1,22 @@
+body {
+	// background-color: lightblue;
+
+	@include overTab {
+		background-color: black;
+		color: white;
+	}
+
+	.inner {
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+	h1 {
+		font-family: "Carattere", cursive;
+	}
+
+	.flash {
+		background-color: lightgrey;
+		text-align: center;
+	}
+}

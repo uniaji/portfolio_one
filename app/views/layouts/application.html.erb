@@ -2,14 +2,95 @@
 <html>
   <head>
     <title>PortfolioOne</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
+  <div class="header">
+		<% if user_signed_in? %>
+      <div class="inner">
+        <div class="title">
+          <h1><%= link_to 'Nyanstagram', root_path %></h1>
+        </div>
+        <div class="search"></div>
+        <ul class="menu">
+          <li class="icon">
+            <%= link_to(root_path) do %>
+              <span class="fas fa-home menu-icon"></span>
+            <% end %>
+          </li>
+          <li class="icon">
+            <%= link_to(root_path) do %>
+              <span class="far fa-paper-plane menu-icon"></span>
+            <% end %>
+          </li>
+          <li class="icon">
+            <%= link_to(new_post_path) do %>
+              <span class="far fa-plus-square menu-icon"></span>
+            <% end %>
+          </li>
+          <li class="icon">
+            <%= link_to(root_path) do %>
+              <span class="far fa-heart menu-icon"></span>
+            <% end %>
+          </li>
+          <div class="pull-menu">
+						<input type="checkbox" id="menu-btn-check" />
+						<label for="menu-btn-check" class="menu-btn"><span>
+              <li class="icon user-icon">
+                  <span class="far fa-user menu-icon"></span>
+              </li>
+            </span></label>
+            <div class="pull-menu-list">
+              <ul>
+                <li>
+                  <%= link_to root_path do %>
+                    <p><span class="far fa-user pull-icon"> プロフィール</span></P>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>
+                    <p><span class="far fa-bookmark pull-icon"> 保存済み</span></P>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>
+                    <p><span class="fas fa-cog pull-icon"> 設定</span></P>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>
+                    <p><span class="fas fa-sync-alt pull-icon"> アカウントを切り替える</span></P>
+                  <% end %>
+                </li>
+                <div class="logout">
+                  <%= link_to "ログアウト", destroy_user_session_path %>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </ul>
+      </div>
+		<% end %>
+  </div>
+
+  <div class="flash">
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+  </div>
+
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,81 @@
+<div class="posts-show">
+    <div class="inner">
+        <div class="show-left">
+            <%= image_tag @post.img.url %>
+        </div>
+        <div class="show-right">
+            <div class="auther">
+                <div class="icon user-icon">
+                    <span class="far fa-user menu-icon"></span>
+                </div>
+                <div class="name">
+                    <%= link_to @post.user.username, user_path(current_user) %>
+                </div>
+                <div class="menu">
+                    <input type="checkbox" id="post-menu-btn-check" />
+                    <label for="post-menu-btn-check" onclicl="" class="post-menu-btn">
+                        <span class="menu-icon">…</span>
+                    </label>
+                    <ul class="posts-menu-list">
+                        <li><%= link_to("削除", post_path(@post), { method: :delete, data: {confirm: "ログアウトしますか？"}, id: "delete"}) %></li>
+                        <li>シェア先…</li>
+                        <li>リンクをコピー</li>
+                        <li>埋め込み</li>
+                        <li class="cancel">キャンセル</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contents">
+                <div class="icon user-icon">
+                    <span class="far fa-user menu-icon"></span>
+                </div>
+                <div class="name-content">
+                    <%= link_to @post.user.username, user_path(current_user), id: "name" %>
+                    <%= @post.content %>
+                    <div class="date"><%= time_ago_in_words(@post.created_at)+"前" %></div>
+                </div>
+            </div>
+            <div class="items">
+                <ul class="footer-items">
+                    <li>
+                        <% if current_user.already_liked?(@post) %>
+                            <%= link_to post_like_path(@post), method: :delete do %>
+                                <span class="fas fa-heart unlike-btn footer-icon" ></span>
+                            <% end %>
+                        <% else %>
+                            <%= link_to post_likes_path(@post), method: :post do %>
+                                <span class="far fa-heart like-btn footer-icon"></span>
+                            <% end %>
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to(root_path) do %>
+                            <span class="far fa-comment footer-icon"></span>
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to(root_path) do %>
+                            <span class="far fa-paper-plane footer-icon"></span>
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to(root_path) do %>
+                            <span class="far fa-bookmark footer-icon"></span>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="likes">
+                いいね！<%= @post.likes.count %>件
+            </div>
+            <div class="comment-input">
+                <span class="far fa-smile footer-icon"></span>
+            </div>
+            <div class="comment-form">コメントを投稿する, placeholder: "150文字以内"</div>
+            </div>
+        </div>
+    <div class="blanc">a</div>
+    <div class="posts-show-index">s</div>
+
+</div>
